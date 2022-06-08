@@ -36,10 +36,14 @@ class App extends React.Component {
     // });
 
     return (
-      <div className="App">
-        <ul className="list">
+      <div>
+        <div className="logo">NETFLIX</div>
+        <p class ="text">We have 20 movies ...</p>
+          <div className="App">
+            <ul className="list">
           {movies}
         </ul>
+      </div>
       </div>
     );
   }

@@ -1,7 +1,19 @@
+@import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap);
+
+
+
 body {
   background-color: black;
   margin: 0;
 }
+
+.logo {
+  position: relative;
+  left: 6%;
+  color: red;font-size: 7em;font-family:'Bebas Neue';letter-spacing: .3rem;padding-left: .3em;padding-top: .3em;
+  opacity: 70%;
+}
+
 
 .item {
   margin: 3%;
@@ -32,4 +44,13 @@ body {
   height: 350px;
   width: 300px;
   object-fit: cover;
+}
+
+.text {
+  position: relative;
+  left: 18%;
+  color: #E50914;
+  bottom: 10%;
+  opacity: 80%;
+
 }
