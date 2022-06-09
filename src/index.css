@@ -51,18 +51,21 @@ body {
 
 .itemContainer:hover {
   margin: 3%;
-  border: 5px solid gray;
-  border-style: outset;
-  height: 80%;
-  width: 80%;
-  overflow: hidden;
-  
-}
-.pop {
-  margin: 3%;
-  border: 5px solid gray;
+  border: 20px rgba(229, 9, 20, .65);
   border-style: outset;
   height: 80%;
   width: 80%;
   overflow: scroll;
+  color: white;
+
+  
+}
+.pop {
+  margin: 3%;
+  border: 20px solid #E50914;
+  border-style: outset;
+  height: 80%;
+  width: 80%;
+  overflow: scroll;
+
 }

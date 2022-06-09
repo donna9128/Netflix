@@ -24,31 +24,24 @@ class App extends React.Component {
 
   render() {
 
-    
-
     const movies = [];
+    
     for(let i = 0; i < this.state.movies.results.length; i++)
     {
       movies.push(<div className="itemContainer">
+        <div>
         <li className="item">
-          <img className="image" src={"https://image.tmdb.org/t/p/w200/" + this.state.movies.results[i].poster_path
-}/></li>
-      
+          <img className="image" src={"https://image.tmdb.org/t/p/w200/" + this.state.movies.results[i].poster_path}/></li>
+          </div>
+        <div>
+        <div onMouseEnter={() => this.setState({on_hover: true})}>
+          <li>{this.state.movies.results[i].title}</li>
+          <li>{this.state.movies.results[i].overview}</li>
+          </div>
+        </div> 
       </div>)
-    }
 
-    // const movies = this.state.movieTitles.map(movie => {
-    //   return <li>{movie}</li>
-    // });
-    for(let i = 0; i < this.state.movies.results.length; i++)
-    {
-      movies.push(<div onMouseEnter={() => this.setState({on_hover: true })} className="itemContainer">
-        <li className="pop">{this.state.movies.results[i].overview}</li>
-        </div>)
-    }
-    if (this.state.on_hover) {
-      return (<div className="pop"></div>);
-    }
+}
 
     return (
       <div>
