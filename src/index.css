@@ -20,8 +20,6 @@ body {
   list-style: none;
   padding: 0;
   opacity: 85%;
-  
-
 }
 .list {
   display: flex;
@@ -36,11 +34,8 @@ body {
   height: 250px;
   width: 200px;
   overflow: hidden;
-  
-  
 }
 .item.image {
-
   height: 350px;
   width: 300px;
   object-fit: cover;
@@ -52,5 +47,4 @@ body {
   color: #E50914;
   bottom: 10%;
   opacity: 80%;
-
 }
