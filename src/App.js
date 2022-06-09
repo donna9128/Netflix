@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import YoutubeEmbed from './video.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -9,7 +10,9 @@ class App extends React.Component {
       movies: {
         results: [],
         on_hover: false
-      }
+        
+      },
+      trailers: "XdKzUbAiswE"
     }
   }
 
@@ -34,9 +37,12 @@ class App extends React.Component {
           <img className="image" src={"https://image.tmdb.org/t/p/w200/" + this.state.movies.results[i].poster_path}/></li>
           </div>
         <div>
-        <div onMouseEnter={() => this.setState({on_hover: true})}>
-          <li>{this.state.movies.results[i].title}</li>
-          <li>{this.state.movies.results[i].overview}</li>
+        <div className="info" onMouseEnter={() => this.setState({on_hover: true})}>
+          <h1>
+            <li>{this.state.movies.results[i].title}</li>
+          </h1>
+            <li>{this.state.movies.results[i].overview}</li>
+            <iframe src="{this.state.trailers}" ></iframe>
           </div>
         </div> 
       </div>)
