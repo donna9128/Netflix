@@ -35,11 +35,11 @@ body {
   width: 200px;
   overflow: hidden;
 }
-.item.image {
+/* .item.image {
   height: 350px;
   width: 300px;
   object-fit: cover;
-}
+} */
 
 .text {
   position: relative;
@@ -47,4 +47,22 @@ body {
   color: #E50914;
   bottom: 10%;
   opacity: 80%;
+}
+
+.itemContainer:hover {
+  margin: 3%;
+  border: 5px solid gray;
+  border-style: outset;
+  height: 80%;
+  width: 80%;
+  overflow: hidden;
+  
+}
+.pop {
+  margin: 3%;
+  border: 5px solid gray;
+  border-style: outset;
+  height: 80%;
+  width: 80%;
+  overflow: scroll;
 }

@@ -7,7 +7,8 @@ class App extends React.Component {
 
     this.state = {
       movies: {
-        results: []
+        results: [],
+        on_hover: false
       }
     }
   }
@@ -19,7 +20,12 @@ class App extends React.Component {
       .then(data => this.setState({movies: data}));
   }
 
+  
+
   render() {
+
+    
+
     const movies = [];
     for(let i = 0; i < this.state.movies.results.length; i++)
     {
@@ -34,12 +40,22 @@ class App extends React.Component {
     // const movies = this.state.movieTitles.map(movie => {
     //   return <li>{movie}</li>
     // });
+    for(let i = 0; i < this.state.movies.results.length; i++)
+    {
+      movies.push(<div onMouseEnter={() => this.setState({on_hover: true })} className="itemContainer">
+        <li className="pop">{this.state.movies.results[i].overview}</li>
+        </div>)
+    }
+    if (this.state.on_hover) {
+      return (<div className="pop"></div>);
+    }
 
     return (
       <div>
         <div className="logo">NETFLIX</div>
-        <p class ="text">We have 20 movies ...</p>
+        <p className ="text">We have 20 movies ...</p>
           <div className="App">
+            
             <ul className="list">
           {movies}
         </ul>
