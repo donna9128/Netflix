@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import YoutubeEmbed from './video.js';
+
 
 class App extends React.Component {
   constructor(props) {
@@ -12,7 +12,9 @@ class App extends React.Component {
         on_hover: false
         
       },
-      trailers: "XdKzUbAiswE"
+      trailers: "1IsL6g2ixak",
+      show_info: false
+
     }
   }
 
@@ -23,7 +25,9 @@ class App extends React.Component {
       .then(data => this.setState({movies: data}));
   }
 
-  
+    posterClick(num) {
+      console.log(num)
+    }
 
   render() {
 
@@ -32,17 +36,17 @@ class App extends React.Component {
     for(let i = 0; i < this.state.movies.results.length; i++)
     {
       movies.push(<div className="itemContainer">
-        <div>
+        <div id={i.length} onClick={() => this.posterClick(this.state.movies.results[i])} >
         <li className="item">
           <img className="image" src={"https://image.tmdb.org/t/p/w200/" + this.state.movies.results[i].poster_path}/></li>
           </div>
         <div>
-        <div className="info" onMouseEnter={() => this.setState({on_hover: true})}>
+        <div className="info">
           <h1>
             <li>{this.state.movies.results[i].title}</li>
           </h1>
             <li>{this.state.movies.results[i].overview}</li>
-            <iframe src="{this.state.trailers}" ></iframe>
+            <iframe src={"https://www.youtube.com/embed/" + this.state.trailers} ></iframe>
           </div>
         </div> 
       </div>)
@@ -52,6 +56,10 @@ class App extends React.Component {
     return (
       <div>
         <div className="logo">NETFLIX</div>
+        <div className={this.state.show_info?"show_movie":"hide_movie"}>
+          {/* this h1 will display info from posterClick ^^ */}
+          <h1>Movie info</h1>
+        </div>
         <p className ="text">We have 20 movies ...</p>
           <div className="App">
             

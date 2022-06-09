@@ -1,10 +1,25 @@
 @import url(https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Shadows+Into+Light&family=Shadows+Into+Light+Two&display=swap);
-
-
-
-body {
+.App {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
   background-color: black;
   margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  overflow: scroll;
+}
+
+body {
+  position: relative;
+  background-color: black;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
 }
 
 .logo {
@@ -26,14 +41,20 @@ body {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  height: 100%;
+  width: 100%;
 }
 .itemContainer {
-  margin: 3%;
+  display: flex;
+  margin: 0%;
   border: 5px solid #E50914;
   border-style: outset;
   height: 250px;
   width: 200px;
   overflow: hidden;
+  margin: 2%;
+
+
 }
 /* .item.image {
   height: 350px;
@@ -50,18 +71,27 @@ body {
 }
 
 .itemContainer:hover {
-  display: flex;
+  
   margin: 3%;
   border: 20px rgba(229, 9, 20, .65);
   border-style: outset;
-  height: 80%;
-  width: 80%;
+  height: 250px;
+  width: 400px;
   overflow: scroll;
   color: white;
+  transition: width .5s, height .5s;
+  transition-timing-function: ease-out;
+  position: relative;
+  z-index: 2;
+  
+
+  
+  
+  
   /* flex-wrap: wrap; */
 }
 
-.pop {
+/* .pop {
   margin: 3%;
   border: 20px solid #E50914;
   border-style: outset;
@@ -69,7 +99,7 @@ body {
   width: 80%;
   overflow: scroll;
 
-}
+} */
 .info {
   margin: 10%;
   list-style: none;
@@ -80,3 +110,9 @@ iframe {
   width: 60%;
 }
 
+.show_movie{
+  background-color: red;
+}
+.hide_movie{
+  background-color: blue;
+}
